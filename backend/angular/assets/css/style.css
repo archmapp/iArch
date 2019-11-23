@@ -1,0 +1,28 @@
+body {
+  font-family:'メイリオ';
+}
+
+.logo {
+  width: 70px;
+  margin: auto;
+}
+
+.navbar-brand .logo {
+  width: 20px;
+  margin: auto;
+}
+
+.iken {
+  font-family: 
+  "HG行書体",
+  "HGP行書体",
+  "HGS行書体",
+  "HGP教科書体",
+  "Script",
+  "ＭＳ 明朝",
+  serif;
+}
+
+.tit {
+  background-color: rgb(216, 204, 137);
+}

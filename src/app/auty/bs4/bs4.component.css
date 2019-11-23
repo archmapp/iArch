@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* ページ内リンクの位置調整 */
+/* section {
+  margin-top: -60px;
+  padding-top: 60px;
+} */
+
+.tab-menu {
+  background-color: rgb(197, 93, 93);
+}
+
+.tab-panel {
+  margin-top: -42px;
+  padding-top: 42px;
+}

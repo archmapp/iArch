@@ -1,0 +1,6 @@
+ng g c db/posts --skipTests --module=app.module.ts
+ng g c db/posts --skip-tests --module=app.module.ts
+
+ng g c db/users --skip-tests --module=app.module.ts
+
+ng g c db/posts/all/list --skip-tests --module=db/posts/db-posts-routing.module.ts

@@ -1,0 +1,115 @@
+// iArch>node misc\DB\insertToAtlas_users.js
+
+const bcrypt = require("bcryptjs");
+var mongoose = require("mongoose");
+
+// make a connection
+mongoose
+  .connect(
+    "mongodb+srv://ty7575au:ty7575aa" +
+      "@cluster0-8mh34.mongodb.net/node-angular?retryWrites=true&w=majority",
+    // "mongodb+srv://auty:auty@cluster0-8mh34.mongodb.net/node-angular?retryWrites=true&w=majority",
+    // archmapp:ty7575aa$
+
+    // "mongodb+srv://ty7575au:ty7575aa@cluster0-8mh34.mongodb.net/node-angular?retryWrites=true&w=majority",
+    // "mongodb+srv://auty:auty@cluster0-8mh34.mongodb.net/node-angular?retryWrites=true&w=majority",
+    // archmapp:ty7575aa$
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
+  .then(() => {
+    console.log("Connected to database!");
+  })
+  .catch(() => {
+    console.log("Connection failed!");
+  });
+
+// get reference to database
+var db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error:"));
+
+db.once("open", function() {
+  console.log("Connection Successful!");
+
+  // define Schema
+  var UserSchema = mongoose.Schema({
+    email: { type: String },
+    name: { type: String, unique: true },
+    password: { type: String, required: true },
+    pref: { type: String },
+    date: {
+      type: Date,
+      default: Date.now
+    }
+  });
+
+  // compile schema to model
+  var User = mongoose.model("User", UserSchema); // books collection
+  // var Book = mongoose.model("Book", BookSchema, "bookstore");
+
+  var ELEMENT_DATA = [
+    {
+      email: "ty7575au@yahoo.co.jp",
+      name: "ty7575au",
+      password: "ty7575aa",
+      pref: "福岡県",
+      date: new Date()
+    },
+    {
+      email: "archmapp@i.softbank.jp",
+      name: "archmapp",
+      password: "ty7575aa",
+      pref: "福岡県",
+      date: new Date()
+    },
+    {
+      email: "tharch77@gmail.com",
+      name: "tharch77",
+      password: "ty7575aa",
+      pref: "福岡県",
+      date: new Date()
+    },
+    {
+      email: "test@test.com",
+      name: "test",
+      password: "ttest",
+      pref: "北海道",
+      date: new Date()
+    },
+    {
+      email: "test@gmail.com",
+      name: "ttest",
+      password: "ttest",
+      pref: "北海道",
+      date: new Date()
+    }
+  ];
+
+  ELEMENT_DATA.map(user => {
+    bcrypt.hash(user.password, 10).then(hash => {
+      user.password = hash;
+      console.log("TCL: user.password", user.password);
+    });
+  });
+  setTimeout(() => {
+    User.collection.insert(ELEMENT_DATA, function(err, users) {
+      if (err) {
+        return console.error(err);
+      } else {
+        console.log("Multiple documents inserted to Collection");
+        console.log(users);
+      }
+    });
+  }, 2000);
+});
+
+// mongo "mongodb://localhost:27017/node-angular"
+//   > use node-angular
+//   switched to db node-angular
+//   > show collections
+//   bookstore
+//   > db.bookstore.find()
+//   { "_id" : ObjectId("5d9724e09298a03570dbcfa4"), "name" : "Mongoose Tutorial", "price" : 10, "quantity" : 25 }
+//   { "_id" : ObjectId("5d9724e09298a03570dbcfa5"), "name" : "NodeJS tutorial", "price" : 15, "quantity" : 5 }
+//   { "_id" : ObjectId("5d9724e09298a03570dbcfa6"), "name" : "MongoDB Tutorial", "price" : 20, "quantity" : 2 }
+//   >

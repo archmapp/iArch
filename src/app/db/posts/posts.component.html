@@ -1,0 +1,55 @@
+<h3>posts</h3>
+<div class="example-button-row mb-3">
+  <button mat-raised-button type="button" class="btn btn-danger ml-2" (click)="0">Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="accent" type="button" class="btn btn-danger ml-2" >Accent</button>
+  <button mat-raised-button color="warn">Warn</button>
+  <!--  -->
+  <hr>
+  <input type="text" #id name="id">
+  <button mat-raised-button (click)="onDeleteById(id)">Delete by id</button>
+  <button mat-raised-button (click)="onDeleteAll()">Delete All</button>
+  <button mat-raised-button (click)="onReset()">Reset</button>
+</div>
+
+<table mat-table [dataSource]="this.posts" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="_id">
+    <th mat-header-cell *matHeaderCellDef> 工事_id </th>
+    <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="content">
+    <th mat-header-cell *matHeaderCellDef> Content </th>
+    <td mat-cell *matCellDef="let element"> {{element.content}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="kouji">
+    <th mat-header-cell *matHeaderCellDef> 工事名 </th>
+    <td mat-cell *matCellDef="let element"> {{element.kouji}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="kouki">
+    <th mat-header-cell *matHeaderCellDef> 工期 </th>
+    <td mat-cell *matCellDef="let element"> {{element.kouki}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="creator">
+    <th mat-header-cell *matHeaderCellDef> Creator </th>
+    <td mat-cell *matCellDef="let element"> {{element.creator}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

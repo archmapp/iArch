@@ -1,0 +1,49 @@
+<mat-toolbar color="primary">
+  <span>
+    <a routerLink="/">i入札（建築編）</a>
+  </span>
+  <ul>
+    <li>
+      <a mat-button routerLink="/bs4" routerLinkActive="mat-accent">Bs4</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/bs4N" routerLinkActive="mat-accent">Bs4N</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/db/posts" routerLinkActive="mat-accent">DB_posts</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/db/users" routerLinkActive="mat-accent">DB_users</a>
+    </li>
+  </ul>
+  <span class="spacer"></span>
+  <ul>
+    <ng-container *ngIf="userId">
+      <li>
+        <a mat-button routerLink="#" routerLinkActive="mat-accent"
+          >{{userName.substr(0,20)}} さん </a
+        >
+      </li>
+      <li>
+        <a mat-button routerLink="/create" routerLinkActive="mat-accent"
+          >新規工事</a
+        >
+      </li>
+      <li>
+        <button mat-button (click)="onLogout()">ログアウト</button>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="!userId">
+      <li>
+        <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent"
+          >ログイン</a
+        >
+      </li>
+      <li>
+        <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent"
+          >新規入会</a
+        >
+      </li>
+    </ng-container>
+  </ul>
+</mat-toolbar>

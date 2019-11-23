@@ -1,0 +1,128 @@
+GITHUB	https://pages.github.com/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ng build --env=prod     ===> [dist]
+
+===
+github
+ty7575au.github.io
+
+
+===
+          ローカルリポジトリ―
+          md devlogger_site
+          cd devlogger_site
+            git config --list: user.name=ty7575au
+          git clone https://github.com/archmapp/ty7575au.github.io
+          https://github.com/archmapp/archmapp.github.io.git
+          cd ty7575au.github.io
+            [dist]以下をコピー
+          git add --all
+          git commit -m "Initial commit"
+          git push -u origin master
+            Username for 'https://github.com': archmapp
+            Password for 'https://archmapp@github.com':　---> ty7575aa
+            To https://github.com/archmapp/ty7575au.github.io
+
+          ===
+          [settings]
+            GitHub Pages: Source: master branch
+          ユーザサイトの場合: https://archmapp.github.io/ty7575au.github.io/
+
+===
+ローカルリポジトリ―
+git clone https://github.com/archmapp/archmapp.github.io.git
+cd ty7575au.github.io
+  [dist]以下をコピー
+git add --all
+git commit -m "Initial commit"
+git push -u origin master
+  Username for 'https://github.com': archmapp
+  Password for 'https://archmapp@github.com':　---> ty7575aa
+
+  To https://github.com/archmapp/archmapp.github.io.git
+
+
+===
+
+  ユーザサイトの場合「http://archmapp.github.io」
+  ユーザサイトの場合「https://archmapp.github.io」
+  https://ユーザー名.github.io/リポジトリ名/
+  https://archmapp.github.io/ty7575au.github.io/
+  https://ty7575au.github.io/archmapp/
+
+
+
+「上流ブランチ」: ローカルブランチが、更新を追いかけるリモートブランチ
+git push -u origin master
+  -u, --set-upstream
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+archmapp2
+archmapp@i.softbank.jp
+  primary: ty7575au@yahoo.co.jp
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+https://kana-kanade.hatenablog.com/entry/2018/04/08/184750
+    //npm install --dev
+npm install --only=dev
+
+ng serve
+http://localhost:4200/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+https://dev.classmethod.jp/client-side/javascript/angular6-ng-command-dev-stg-prod-change-setting-build/
+
+  ng build --env=prod
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ng g c components/~~~~ --spec false
+ng g c ~~~~ --spec false
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+tharch77@gmail.com		ty75757777	Atlas ty7575aa$
+//   "mongodb+srv://auty:auty@cluster0-jfofz.mongodb.net/test?retryWrites=true&w=majority";
+//     //  tharch77@gmail.com   for Atlas ty7575aa$ に保存される。
+
+
+kyuhou77@gmail.com		q77kyuHH$	qhw：kyuhou77@gmail.com
+
+
+archmapp77@gmail.com	ty7575aa	ty7575AA
+	for Atlas ty7575ss$
+archmapp77@gmail.com	for Atlas ty7575aa$
+	BradTraversy in /config/key.js
+    "mongodb+srv://auty:auty@cluster0-ecmjd.mongodb.net/test?retryWrites=true&w=majority",
+  // archmapp77@gmail.com	for Atlas ty7575aa$ に保存される。
+
+
+
+archmapp7070@gmail.com	ty7575aa
+
+
+
+https://angular.jp/
+archmapp77@gmail.com	ty7575aa
+
+
+
+archmapp@i.softbank.jp	ty7575aa	for Atlas ty7575ss$
+	"mongodb+srv://auty:auty@cluster0-8mh34.mongodb.net/test?retryWrites=true&w=majority"
+
+
+    "mongodb+srv://ty7575au:ty7575aa@cluster0-8mh34.mongodb.net/test?retryWrites=true&w=majority",
+    // "mongodb+srv://auty:auty@cluster0-8mh34.mongodb.net/test?retryWrites=true&w=majority",
+    // archmapp:ty7575aa$
+
+Mongo Shell:
+mongo "mongodb+srv://cluster0-8mh34.mongodb.net/node-angular" --username auty

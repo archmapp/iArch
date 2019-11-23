@@ -1,0 +1,106 @@
+<ng-template #content let-modal>
+  <div class="modal-header dark-modalJUST">
+    <h4 class="modal-title" id="modal-basic-title">
+      工期の計算
+    </h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true" style="color: grey">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body dark-modalJUST">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">入札日</label>
+        <div class="input-group">
+          <input
+            id="dateOfBirth"
+            class="form-control calendar"
+            placeholder="yyyy-mm-dd"
+            [(ngModel)]="model1"
+            name="dp"
+            ngbDatepicker
+            #dp="ngbDatepicker"
+            #dp1
+          />
+          <div class="input-group-append">
+            <button
+              class="btn calendar"
+              style="color: white"
+              (click)="dp.toggle()"
+              type="button"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dateOfComplete">竣工日</label>
+        <div class="input-group">
+          <input
+            id="dateOfComplete"
+            class="form-control calendar"
+            placeholder="yyyy-mm-dd"
+            [(ngModel)]="model2"
+            name="dp2"
+            ngbDatepicker
+            #dp2="ngbDatepicker"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn calendar"
+              style="color: white"
+              (click)="dp2.toggle()"
+              type="button"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+    <pre><span style="color: white"> 1: {{ model1 | json }}</span></pre>
+    <pre><span style="color: white"> 2: {{ model2 | json }}</span></pre>
+
+    <div class="form-group">
+      <label for="dateOfComplete">工期: </label>
+      <span class="ml-2" style="color: white" *ngIf="model1 && model2">{{ getDiff(model1, model2) }}</span>
+    </div>
+  </div>
+  <div class="modal-footer dark-modalJUST">
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      style="color: white"
+      (click)="modal.dismiss('cancel click')"
+    >
+      取消
+    </button>
+    <button
+      type="button"
+      class="btn btn-success ml-4"
+      (click)="modal.close('Save click ' + dp1.value)"
+    >
+      保存
+    </button>
+  </div>
+  <div class="modal-footer dark-modalJUST">
+    <div class="row justify-content-center">
+      <ngb-alert class="my-2 col-10" type="danger" [dismissible]="false">
+        <small> （注）カレンダーの右端が「日曜日」表示となっています。</small>
+      </ngb-alert>
+    </div>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+  カレンダーによる工期の計算
+</button>
+
+<hr />
+
+<pre>{{ closeResult }}</pre>

@@ -1,0 +1,10 @@
+<div class="container">
+  <app-header></app-header>
+  <main>
+    <flash-messages></flash-messages>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
+
+<!-- <app-error *ngIf="hasError"></app-error> -->

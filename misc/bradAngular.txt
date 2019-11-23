@@ -1,0 +1,98 @@
+Database： ルール
+========
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+
+<!-- https://console.firebase.google.com/u/0/project/clientpanel-a7c1b/overview -->
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAt5m2g3HPn3IMnUk5hLJihm7E9fbMTZa0",
+    authDomain: "clientpanel-a7c1b.firebaseapp.com",
+    databaseURL: "https://clientpanel-a7c1b.firebaseio.com",
+    projectId: "clientpanel-a7c1b",
+    storageBucket: "",
+    messagingSenderId: "842229472493",
+    appId: "1:842229472493:web:f12c9ac3a8addf61"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- https://console.firebase.google.com/u/0/project/clientpanel-a7c1b/settings/general/web:ZDdiOTY3ZDAtOThlZi00MTE0LWFlYTAtODVhNjczODQ5MjBi -->
+プロジェクト名
+clientpanel
+プロジェクト ID
+clientpanel-a7c1b
+Google Cloud Platform（GCP）リソース ロケーション
+未選択
+ウェブ API キー
+AIzaSyAt5m2g3HPn3IMnUk5hLJihm7E9fbMTZa0
+公開設定
+これらの設定は公開されるプロジェクトのインスタンスを制御します
+公開名
+project-842229472493
+サポートメール
+未設定
+===
+user: auty@gmail.com/auty00
+===
+
+
+https://kana-kanade.hatenablog.com/entry/2018/04/08/184750
+    //npm install --dev
+npm install --only=dev
+
+ng serve
+http://localhost:4200/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+https://dev.classmethod.jp/client-side/javascript/angular6-ng-command-dev-stg-prod-change-setting-build/
+
+  ng build --env=prod
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ng g c components/~~~~ --spec=false
+ng g c ~~~~ --spec=false
+            --skipTests=true|false
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ng g m app-routing --flat --module=app
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+firebase login
+firebase init
+ng build
+firebase deploy
+  Project Console: https://console.firebase.google.com/project/clientpanel-a7c1b/overview
+  Hosting URL: https://clientpanel-a7c1b.firebaseapp.com
+
+firebase open hosting:site
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+***
+npm uninstall firebase angularfire2
+npm i angularfire2@5.0.0-rc.4 firebase@4.8.2
+    "angularfire2": "^5.0.0-rc.4",
+    "firebase": "^4.8.2",
+
+
+

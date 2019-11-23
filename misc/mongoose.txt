@@ -1,0 +1,59 @@
+
+https://qiita.com/exp/items/9a83165a5f5e996210af
+MongoDB AtlasにCLI(PowerShell)およびGUIビューアのMongoDB Compassで接続する方法。
+
+    mongodb+srv://ty7575au:ty7575aa@cluster0-8mh34.mongodb.net/admin
+    mongodb+srv://ty7575au:ty7575aa@cluster0-shard-00-00-8mh34.mongodb.net/admin
+                    ＊＊＊　-shard-00-00 の挿入が必要　＊＊＊
+                    結果：Hostname　cluster0-shard-00-00-8mh34.mongodb.net
+                    （[ Favorite Name]に、Atlas iArchとして登録）
+                    admin という語句は関係ないようだ。
+
+
+コマンドプロンプトからの接続
+    mongo "mongodb+srv://cluster0-8mh34.mongodb.net/admin"  --username ty7575au
+    MongoDB shell version v4.0.0
+    Enter password: ty7575aa
+次のエラーメッセージが出るが接続できた。（語句 /adminは必要）
+  Error while trying to show server startup warnings: user is not allowed to do action [getLog] on [admin.]
+MongoDB Enterprise Cluster0-shard-0:PRIMARY>
+    use node-angular
+    db.users.find()
+    db.posts.find()
+
+http://azwoo.hatenablog.com/entry/2015/12/20/143930
+mongoose でデータ（エントリ）の削除方法
+
+一つのエントリを削除
+１つのエントリを削除。複数のドキュメントがマッチする場合、一番古いものが１つ消されます。
+
+Group.findOneAndRemove({ "name" : "cooking" }, function(err){
+   if(err) throw err;
+});
+条件に合う複数のエントリを削除。
+Group.remove({ "name" : "cooking" }, function(err){
+   if(err) throw err;
+});
+_idに合う複数のエントリを削除
+Group.findByIdAndRemove(id, function(err){
+   if(err) throw err;
+});
+全エントリ削除
+Group.remove({}, function(err){
+   if(err) throw err;
+});
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+https://qiita.com/svjunic/items/285e9cf20169d70aa1fa
+MongoDB コマンド
+
+特定の値を持っているものだけ削除
+db.COL.remove( { name: 'mogeta' } );
+
+コレクション内のドキュメント全件削除
+db.COL.remove({});
+
+重複レコードの除去（distinct）
+nameのプロパティで重複しているもの除いて、重複しないをdocument取得
+
+db.COL.distinct( 'name' );
